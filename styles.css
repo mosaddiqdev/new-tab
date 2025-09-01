@@ -1,0 +1,206 @@
+/* JetBrains Mono Font Faces */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('fonts/JetBrainsMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #1e1e1e 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: quickFadeIn 0.2s ease-out forwards;
+    text-align: center;
+}
+
+.greeting {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: #999999;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: -0.5rem;
+}
+
+.date {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: #bbbbbb;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    margin-top: -0.2rem;
+    opacity: 0.95;
+}
+
+.shortcuts-hint {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: 300;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.shortcuts-hint.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Subtle hover effects */
+.clock:hover {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.greeting:hover,
+.date:hover {
+    opacity: 1;
+}
+
+/* Quick fade-in animation */
+@keyframes quickFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.clock {
+    font-size: clamp(6rem, 20vw, 25vh);
+    color: #ffffff;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    line-height: 0.9;
+    font-feature-settings: 'tnum';
+    max-width: 90vw;
+    text-align: center;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .clock {
+        font-size: clamp(4rem, 15vw, 12vh);
+        letter-spacing: 0.03em;
+    }
+
+    .greeting {
+        font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    }
+
+    .date {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+
+    .shortcuts-hint {
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .clock {
+        font-size: clamp(3rem, 18vw, 10vh);
+        letter-spacing: 0.02em;
+    }
+
+    .container {
+        gap: 0.5rem;
+    }
+
+    .greeting {
+        font-size: clamp(0.7rem, 2vw, 1rem);
+    }
+
+    .date {
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .clock {
+        font-size: clamp(4rem, 15vh, 8rem);
+    }
+
+    .container {
+        gap: 0.3rem;
+    }
+
+    .greeting {
+        font-size: clamp(0.8rem, 2vh, 1rem);
+    }
+
+    .date {
+        font-size: clamp(0.8rem, 1.8vh, 1rem);
+    }
+}
+
+@media (min-width: 1920px) {
+    .clock {
+        font-size: clamp(12rem, 18vw, 30rem);
+    }
+}
+
+@media (min-width: 2560px) {
+    .clock {
+        font-size: clamp(16rem, 15vw, 35rem);
+    }
+}
