@@ -25,10 +25,23 @@ Minimalist Chrome new tab page featuring a beautiful JetBrains Mono digital cloc
 
 ## 🚀 Installation
 
-1. **Open Chrome Extensions** - Go to `chrome://extensions/`
+### Chrome / Edge / Brave
+
+1. **Open Extensions Page**:
+   - **Chrome**: Go to `chrome://extensions/`
+   - **Edge**: Go to `edge://extensions/`
+   - **Brave**: Go to `brave://extensions/`
+
 2. **Enable Developer Mode** - Toggle the switch in top right
+
 3. **Load Extension** - Click "Load unpacked" and select this folder
+
 4. **Open New Tab** - Press Ctrl+T to see your beautiful minimal clock
+
+### Alternative Method (All Browsers)
+- Download the latest release zip file from [Releases](https://github.com/mosaddiqdev/new-tab/releases)
+- Extract the zip file to a folder
+- Follow steps 1-4 above
 
 ## 🎨 Design Philosophy
 
